@@ -4,10 +4,12 @@ var {Route, Router, IndexRoute, hashHistory} = require('react-router');
 // Load foundation
 $(document).foundation();
 
+var TodoApp = require('TodoApp');
+
 // App css
 require('style!css!sass!applicationStyles')
 
 ReactDOM.render(
-  <p>React Boilerplate 3</p>,
+  <TodoApp/>,
   document.getElementById('app')
 );
