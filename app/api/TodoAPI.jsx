@@ -27,8 +27,20 @@ module.exports = {
     });
 
     //filter by searchText
+    filterTodos = filterTodos.filter((todo) => {
+      return (searchText.length === 0) || (todo.text.toLowerCase().indexOf(searchText.toLowerCase()) >= 0);
+    });
 
     //sort todos with non-completed first
+    filterTodos.sort((a,b) => {
+      if(!a.completed && b.completed){
+        return -1;
+      }else if(a.completed === b.completed){
+        return 0;
+      }else{
+        return 1;
+      }
+    });
 
     return filterTodos;
   }
